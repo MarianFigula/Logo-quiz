@@ -1,0 +1,112 @@
+
+body,html{
+    margin:0;
+
+}
+
+header{
+    width: 25vw;
+    margin: 1% auto 0;
+    background-color: #1d3557;
+    color: white;
+    border-radius: 1em;
+    padding: 0.5% 0;
+    text-align: center;
+
+}
+
+
+.image-container{
+    width: 60vw;
+    min-height: 15vh;
+    display: flex;
+    margin: 2% auto 0;
+    justify-content: center;
+}
+
+#logo{
+    object-fit: contain;
+    width: 200px;
+    height: 190px;
+    border-radius: 15px;
+
+}
+
+#napoveda-btn, #riesenie-btn{
+    height: 5vh;
+    background-color: #2a9d8f;
+    color: white;
+    border: 0;
+
+}
+
+#understand-btn, #next-lvl-btn, #main-menu-btn{
+    display: none;
+}
+
+
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spravne-policka-container{
+    min-height: 8vh;
+    max-width: 50vw;
+    margin: auto;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    gap: 5px;
+    background-color: #bad7ff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.random-pismena-container{
+    background-color: #717375;
+    width: 65vw;
+    display: flex;
+    margin: 7vh auto 0;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px 30px;
+    border-radius: 10px;
+}
+
+.vsetky-pismena{
+    width: 3.8vw;
+    min-height: 7vh;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 0.7em;
+    background-color: #ebebeb;
+
+}
+
+.hadacie-policko{
+    width: 4vw;
+    background-color: #ffb703;
+    border-radius: 1rem;
+}
+
+#my-modal{
+    background-color: grey;
+
+}
+
+.modal-dialog{
+    opacity: 1;
+    margin-top: 10%;
+}
+
+@media (max-width: 550px) {
+    header{
+        width: 60vw;
+    }
+
+}

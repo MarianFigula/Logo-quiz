@@ -1,0 +1,13 @@
+
+{
+  "name": "LogoQuiz",
+  "short_name": "LogoQuiz",
+  "icons": [
+
+  ],
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fffbeb",
+  "theme_color": "#ffffff",
+  "lang": "sk"
+}

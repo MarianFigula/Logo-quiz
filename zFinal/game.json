@@ -1,0 +1,63 @@
+
+[
+  {
+    "name": "beats",
+    "filename": "beats.png",
+    "index": 0,
+    "help":"Americký výrobca audiotechniky a príslušenstvá najmä ale sláchadiel a reproduktorov.\nktorá od roku 2012 spoločnosť spravuje streaming hudby.\nTúto spoločnosť založil v roku Jimmy Iovine, známy aj ako Dr. Dre, neskôr ju spoločnosť Apple odkúpila ale značku zachovala. "
+  },
+  {
+    "name": "audi",
+    "filename": "audi.png",
+    "index": 1,
+    "help":"Nemecký výrobca automobilov, ktorý je prémiovou značkou v skupine Volkswagen Group.\nZnak je symbolom jedného z najstarších výrobcov vozidiel v Nemecku. Predstavuje splynutie štyroch, do tej doby nezávislých výrobcov."
+  },
+  {
+    "name": "lexus",
+    "filename": "lexus.png",
+    "index": 2,
+    "help":"Je to divíza koncernu Toyota z Japonska vyrábajúca luxusné automobily. Táto značka je známa svojim technickým pokrokom a bezpečnosťou.\nAutomobilka sa preslávila v oblasti šetrnosti k životnému prostrediu a vďaka svojim prvkom aktívnej bezpečnosti udáva smer, ktorým sa uberajú moderné automobily."
+  },
+  {
+    "name": "chevrolet",
+    "filename": "chevrolet.png",
+    "index": 3,
+    "help":"Americká firma vyrábajúca autá, založená v roku 1909. Je súčasťou koncernu General Motors.\nV roku 1953 firma predstavila na výstave automobilov Motorama v New Yorku model Corvette.\nFirma je pomenovaná podľa jej zakladateľa."
+  },
+  {
+    "name": "mastercard",
+    "filename": "mastercard.png",
+    "index": 4,
+    "help":"Nadnárodná spoločnosť, sídliacia v Spojených štátoch amerických. Celosvetovo je jej hlavnou činnosťou spracovanie platieb medzi bankami obchodníkov a bankami vydávajúcimi platobné karty tejto značky.Pôvodne známa aj pod menom \"Interbank\" a \"Master Charge\"."
+  },
+  {
+    "name": "paypal",
+    "filename": "paypal.png",
+    "index": 5,
+    "help":"Je to internetový platobný systém, v minulosti patriaci spoločnosti eBay. Umožňuje prevody peňazí medzi účtami, ktoré sú identifikované e-mailovými adresami.\nSpoluzakladateľom je aj známy miliardár Elon Musk."
+  },
+  {
+    "name": "snapchat",
+    "filename": "snapchat.jpg",
+    "index": 6,
+    "help":"Aplikácia, ktorá je založená na posielaní fotiek. Veľmi populárna v USA, kde má asi 50 miliónov používateľov. Postavená je na princípe, že človek odfotí nejakú situáciu svojim mobilným telefónom a pošle ju priateľom. Tí si ju môžu pridŕžať, inak sa maže. "
+  },
+  {
+    "name": "starbucks",
+    "filename": "starbucks.png",
+    "index": 7,
+    "help":"Výrobca kávy a najväčší obchodný reťazec kaviarní na svete, pôvodom z mesta Seattle v USA. \nSpoločnosť vlastní 27339 obchodov v 55 krajinách sveta, predáva predovšetkým mnoho druhov hotových káv, espresa, rozličné druhy ďalších horúcich a studených nápojov, kávové zrná, zákusky ku káve a reklamné predmety."
+  },
+  {
+    "name": "twitter",
+    "filename": "twitter.png",
+    "index": 8,
+    "help":"Blogovacia sociálna sieť, ktorá umožňuje svojim používateľom publikovať krátke príspevky. Takýto príspevok má spravidla výlučne textovú podobu.Od svojho vzniku v roku 2006 Jackom Dorseyom, spoločnosť získala popularitu po celom svete a v súčasnosti má viac ako 500 miliónov užívateľov. Sociálnu sieť používajú najviac v USA, Brazílii a Japonsku."
+  },
+  {
+    "name": "motorola",
+    "filename": "motorola.jpg",
+    "index": 9,
+    "help":"Je americká nadnárodná spoločnosť, ktorá podniká v oblasti telekomunikácií. Bola založená v roku 1928 a ústredie má v Illinois. Začala svoje pôsobenie ako Galvinova výrobná spoločnosť v roku 1928. Názov bol prisvojený až v roku 1947, ale ako obchodná značka sa používal už od tridsiatych rokov."
+  }
+]

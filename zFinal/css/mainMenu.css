@@ -1,0 +1,74 @@
+body,html{
+    margin:0;
+
+}
+
+header{
+    width: 30%;
+    margin: 3% auto 0;
+    background-color: #1d3557;
+    color: white;
+    border-radius: 1em;
+    padding: 1% 0;
+    text-align: center;
+}
+
+.background{
+    width: 30%;
+    min-height: 400px;
+    padding-top: 50px;
+    margin: 5% auto 0;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    background-color: #e5e6e4;
+    text-align: center;
+
+}
+
+button{
+    background-color: #73ba9b;
+    color: #ffffff;
+    width: 30%;
+    padding: 15px;
+    margin-top: 4%;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #73ba9b;
+}
+
+#my-modal{
+    background-color: grey;
+}
+
+.modal-dialog{
+    opacity: 1;
+}
+
+@media only screen and (max-width: 700px) {
+    .background {
+        width: 80%;
+    }
+    button{
+        width: 50%;
+    }
+    header{
+        margin-top: 5%;
+        width: 70%;
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .background {
+        width: 70%;
+        margin-top: 5%;
+    }
+    button{
+        width: 70%;
+    }
+    header{
+        margin-top: 5%;
+        width: 70%;
+        padding: 15px;
+    }
+}
