@@ -5,6 +5,26 @@ let controlsBtn = document.querySelector("#controls-btn");
 let understandBtn = document.querySelector("#understand-btn")
 let buttonX = document.querySelector("#button-x")
 
+function setLocalStorage(){
+    if (localStorage.getItem("objects") == null){
+        let pole = [];
+        fetch("./game.json")
+            .then(res => res.json())
+            .then(data => {
+                for (let i = 0; i < 10; i++) {
+                    let random = Math.floor(Math.random() * data.length);
+                    pole.push(data[random]);
+                    data.splice(random, 1);
+                }
+                localStorage.setItem("objects", JSON.stringify(pole));
+            })
+    }
+}
+
+try {
+    setLocalStorage()
+}catch (e){}
+
 const hoverAnimation = (id) => {
     anime({
         targets: id,
@@ -15,7 +35,7 @@ const hoverAnimation = (id) => {
     })
 }
 
-const mouseOut = (id) => {
+const hoverAnimationOut = (id) => {
     anime({
         targets: id,
         scale: {
@@ -25,19 +45,11 @@ const mouseOut = (id) => {
     })
 }
 
-const modalScroll = (id) => {
+const modalScroll = (id,pixels,duration) => {
     anime({
         targets: id,
-        translateY: 90,
-        duration: 1100,
-    })
-}
-
-// todo: zmenit aby sa nevykonavala animacia
-const modalScrollBack = (id) => {
-    anime({
-        targets: id,
-        translateY: -90,
+        translateY: pixels,
+        duration: duration,
     })
 }
 
@@ -47,17 +59,19 @@ function displayModal(){
     modal.style.display = "block";
 }
 
-function modalPravidla(){
+function modalRules(){
     displayModal();
     let modalBody = document.querySelector('.modal-body');
     let modalTitle = document.querySelector('.modal-title');
     modalTitle.innerHTML = "Pravidlá";
     modalBody.innerHTML = "Hra logo quiz pozostáva z desiatich úloh.\n" +
         "        Vašou úlohou bude uhádnuť známe ale aj menej populárne svetové značky a ich logá.\n" +
-        "        Za každé uhádnuté logo hráč získava bod. Ak logo nebude vedieť uhádnuť, môže kliknúť na tlačidlo \"Neviem\".\n" +
-        "        Tým pádom hráč nezískava bod a pokračuje v hre ďalej. Na konci hráč uvidí svoje skóre.\n"
+        "        Ak hráč usporiadá písmená v správnom poradí, získava bod. Ak logo nebude vedieť uhádnuť, môže kliknúť na tlačidlo \"Nápoveda\" alebo " +
+        "       \"Riešenie\".\n" + "Ak hráč klikne na tlačidlo \"Riešenie\" nezískava bod a prechádza na ďalší level.\n"+
+        "        Na konci hráč uvidí svoje skóre.\n"
 }
-function modalNastavenia(){
+
+function modalControls(){
     displayModal();
     let modalBody = document.querySelector('.modal-body');
     let modalTitle = document.querySelector('.modal-title');
@@ -65,7 +79,6 @@ function modalNastavenia(){
     modalBody.innerHTML = "Typ hry - drag and drop.\n" +
         "        Hráč ovláda hru myšou (prstom na smartphone/tablete).\n" +
         "        Hráč musí kliknúť na písmeno a presunúť ho do vyznačeného poľa.\n"
-
 }
 
 function closeModal(){
@@ -75,46 +88,47 @@ function closeModal(){
 }
 
 startGameBtn.addEventListener("mouseover", () => hoverAnimation(startGameBtn))
-startGameBtn.addEventListener("mouseout", () => mouseOut(startGameBtn))
-startGameBtn.addEventListener("click", () => window.open("gameSite.html","_self"))
-
-rulesBtn.addEventListener("mouseover", () => hoverAnimation(rulesBtn))
-rulesBtn.addEventListener("mouseout", () => mouseOut(rulesBtn))
-rulesBtn.addEventListener("click", () => {
-    modalPravidla();
-    modalScroll("#dialog")
+startGameBtn.addEventListener("mouseout", () => hoverAnimationOut(startGameBtn))
+startGameBtn.addEventListener("click", () => {
+    window.open("gameSite.html","_self")
+    hoverAnimationOut(startGameBtn);
 })
 
+rulesBtn.addEventListener("mouseover", () => hoverAnimation(rulesBtn))
+rulesBtn.addEventListener("mouseout", () => hoverAnimationOut(rulesBtn))
+rulesBtn.addEventListener("click", () => {
+    modalRules();
+    modalScroll("#dialog",60, 1100)
+})
 
 controlsBtn.addEventListener("mouseover", () => hoverAnimation(controlsBtn))
-controlsBtn.addEventListener("mouseout", () => mouseOut(controlsBtn))
+controlsBtn.addEventListener("mouseout", () => hoverAnimationOut(controlsBtn))
 controlsBtn.addEventListener("click", () => {
-    modalNastavenia();
-    modalScroll("#dialog")
+    modalControls();
+    modalScroll("#dialog",90,1100)
 })
 
 understandBtn.addEventListener("click", () =>{
     closeModal();
-    modalScrollBack("#dialog")
+    if (document.querySelector('.modal-title').innerText === "Pravidlá"){
+        modalScroll("#dialog",-60, 0)}
+    else{
+        modalScroll("#dialog",-90, 0)}
 })
 
 buttonX.addEventListener("click", () =>{
     closeModal();
-    modalScrollBack("#dialog")
+    if (document.querySelector('.modal-title').innerText === "Pravidlá")
+        modalScroll("#dialog",-60, 0)
+    else
+        modalScroll("#dialog",-90, 0)
 })
 
-
-
-
-
-
-
-//  ZMAZANIE STRANKY
-/*
-
-let startGameBtn = document.querySelector('#start-game-btn')
-startGameBtn.addEventListener("click", () => {
-    let body = document.querySelector("body");
-    body.innerHTML = './zadanie5/index.html';
+// registrating service worker
+navigator.serviceWorker.register("serviceWorker.js")
+    .then((reg) => {
+        console.log("SW Registered", reg)
+    }).catch((err) => {
+    console.log("ERROR:",err)
 })
-*/
+

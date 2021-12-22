@@ -1,13 +1,32 @@
-
 {
-  "name": "LogoQuiz",
-  "short_name": "LogoQuiz",
-  "icons": [
-
-  ],
+  "theme_color": "#000",
+  "background_color": "#000",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#fffbeb",
-  "theme_color": "#ffffff",
-  "lang": "sk"
+  "start_url": "../zFinal/index.html",
+  "name": "Logo Quiz Game",
+  "short_name": "Logo Quiz",
+  "id": "/style.css/zFinal/index.html ",
+  "description": "PWA application - Drag&Drop Logo Quiz",
+  "icons": [
+    {
+      "src": "../zFinal/imgs/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../zFinal/imgs/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "../zFinal/imgs/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "../zFinal/imgs/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
