@@ -46,6 +46,10 @@ header{
     border: 0;
 }
 
+#hint-btn:hover, #solution-btn:hover{
+    background-color: #2e4f63;
+}
+
 
 #understand-btn, #next-lvl-btn, #main-menu-btn{
     display: none;
@@ -181,7 +185,7 @@ header{
         font-size: 9px;
     }
     .correct-letters-container{
-        max-width: 70vw;
+        max-width: 88vw;
         min-height: 5vh;
         gap: 3px;
     }

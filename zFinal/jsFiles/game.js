@@ -42,10 +42,10 @@ function createLetterFields(name){
             field.innerText = String.fromCharCode(randomChar);
         }
         field.addEventListener("dragend", () => {
-            checkWin().then(r => console.log("dragend"));
+            checkWin().then(r => console.log("dragend OK"));
         });
         field.addEventListener("touchend", () => {
-            checkWin().then(r => console.log("touchend"));
+            checkWin().then(r => console.log("touchend OK"));
 
         });
         randomNumber = Math.floor(Math.random() * hiddenWord.length);
@@ -129,7 +129,7 @@ understandBtn.addEventListener("click", () => {
 solutionBtn.addEventListener("click", async () => {
 
     audioFail.volume = 0.5;
-    await audioFail.play().then(r => console.log("OK")).catch(err => console.log("Audi Error: ",err));
+    await audioFail.play().then(r => console.log("audioFail OK")).catch(err => console.log("Audi Error: ",err));
     buttonX.style.display = "none"
 
     if (index === pole.length - 1) {
@@ -190,10 +190,10 @@ function nextLvl(){
 // display modal when the player get correct answer
 async function winModal() {
     audioSuccess.volume = 0.5;
-    await audioSuccess.play().then(r => console.log("OK")).catch(err => console.log("Audio Error:", err));
+    await audioSuccess.play().then(r => console.log("AudioSuccess OK")).catch(err => console.log("Audio Error:", err));
     buttonX.style.display = "none"
     if (index === pole.length - 1) {
-        modalText("Koniec Hry!", "Vaše skóre: " + `<span class='fw-bold'>5 / 10</span>`);
+        modalText("Koniec Hry!", "Vaše skóre: " + `<span class='fw-bold'>${counterGood}/${pole.length}</span>`);
         switchDisplay(mainMenuBtn, understandBtn, nextLvlBtn)
     } else {
         switchDisplay(nextLvlBtn, understandBtn, mainMenuBtn)
@@ -211,6 +211,7 @@ async function checkWin () {
     })
     if (string === pole[index].name.toUpperCase()) {
         counterGood++;
+        //console.log(counterGood)
         localStorage.setItem("counterGood",counterGood)
         await winModal();
     }
