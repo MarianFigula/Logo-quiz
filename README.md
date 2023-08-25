@@ -1,4 +1,4 @@
 # Logo Quiz
 
-Logo quiz web application - Slovak Version
+Logo quiz PWA - Slovak Version
 
